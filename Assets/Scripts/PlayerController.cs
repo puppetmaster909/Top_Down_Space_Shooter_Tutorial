@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.velocity = movement * speed;
 
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         rb.position = new Vector3
         (
              Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
